@@ -43,7 +43,7 @@ repositories {
 
 dependencies {
     // Latest Paper API
-    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:26.2.build.123-stable")
     compileOnly("org.spigotmc:spigot-1.17.1-R0.1-SNAPSHOT-remapped") // for nms packets, local lib
     compileOnly("org.spigotmc:spigot-1.16.5-R0.1-SNAPSHOT") // for nms packets, local lib
 
@@ -92,8 +92,9 @@ tasks {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(25))
+    }
 }
 
 
